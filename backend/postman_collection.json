@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "TicketBookingAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Shows",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/shows",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "shows"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Show",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/admin/shows"
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Sample\", \"start_time\": \"2025-12-31T12:00:00Z\", \"total_seats\": 40}"
+        }
+      }
+    },
+    {
+      "name": "Book Seats",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/bookings"
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"show_id\": 1, \"user_name\": \"Alice\", \"seats\": 2}"
+        }
+      }
+    }
+  ]
+}
